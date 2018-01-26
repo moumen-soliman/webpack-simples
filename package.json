@@ -1,16 +1,26 @@
 {
-  "name": "webpack-simples",
+  "name": "Webpack-simples",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moumen-soliman/webpack-simples.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/moumen-soliman/webpack-simples/issues"
+  },
+  "homepage": "https://github.com/moumen-soliman/webpack-simples#readme",
   "devDependencies": {
+    "css-loader": "^0.28.9",
+    "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   }
 }
