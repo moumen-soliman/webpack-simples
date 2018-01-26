@@ -1,1 +1,1 @@
-alert('empty');
+require('./main.scss');
