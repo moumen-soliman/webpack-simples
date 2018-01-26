@@ -67,7 +67,15 @@ module.exports = {
             root: __dirname,
             verbose: true,
             dry: false
-        })
+        }),
+        function () {
+            this.plugin('done', stats => {
+                require('fs').writeFileSync(
+                    path.join(__dirname, 'dist/manifest.json'),
+                    JSON.stringify(stats.toJson().assetsByChunkName)
+            )
+            });
+        }
     ]
 };
 
