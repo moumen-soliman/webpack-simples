@@ -1,5 +1,11 @@
-@import '~some-package/styles.css';
+.one {
+    background: red;
+}
 
-.text {
-    background: url("./images/stub.png");
+.two {
+    background: green;
+}
+
+div > p {
+    color: blue;
 }
