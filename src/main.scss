@@ -1,5 +1,5 @@
-$primary: green;
+@import '~some-package/styles.css';
 
-body {
-    background: $primary;
+.text {
+    background: url("./images/stub.png");
 }
