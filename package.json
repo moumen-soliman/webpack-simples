@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack src/main.js dist/bundle.js",
+    "build": "webpack",
   },
   "keywords": [],
   "author": "",
