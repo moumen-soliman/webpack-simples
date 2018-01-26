@@ -4,6 +4,7 @@ const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BuildManifestPlugin = require('./build/plugins/BuildManifestPlugin');
 const inProduction = (process.env.NODE_ENV === 'production');
 
 module.exports = {
@@ -72,19 +73,14 @@ module.exports = {
             paths: glob.sync(path.join(__dirname, 'index.html')),
             minimize: inProduction
         }),
-        new CleanWebpackPlugin(['dist', 'build'], {
+        new CleanWebpackPlugin(['dist'], {
             root: __dirname,
             verbose: true,
             dry: false
         }),
-        function () {
-            this.plugin('done', stats => {
-                require('fs').writeFileSync(
-                    path.join(__dirname, 'dist/manifest.json'),
-                    JSON.stringify(stats.toJson().assetsByChunkName)
-            )
-            });
-        }
+        new BuildManifestPlugin()
+        /*function () {
+        }*/
     ]
 };
 
